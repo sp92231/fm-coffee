@@ -61,6 +61,7 @@ img {
 .order-items {
     grid-area: order-items;
     gap: .75rem;
+
     padding: 1.25rem 0rem 1.25rem 0rem;
     display: grid;
     grid-template-columns: 15px auto 40px;
@@ -99,26 +100,27 @@ img {
     list-style: none;
 }
 
-.order-name {
-    grid-area: order-info;
-
-    input {
-        border: 2px #885a2d solid;
-        border-radius: 1.5rem;
-        background-color: #ede1d5;
-        width: 100%;
-        padding: 1rem;
-    }
+input {
+    border: 2px #885a2d solid;
+    border-radius: 6.25rem;
+    background-color: #ede1d5;
+    width: 100%;
+    padding: .25rem;
+    font-size: 18px;
 }
 
-.label {
-    position: absolute;
+.input-label {
     background-color: #ede1d5;
     color: #885a2d;
+    position: relative;
+    left: 25px;
+    top: 10px;
+    font-size: 12px;
 }
 
 .order-payment {
     grid-area: order-payment;
+
 }
 
 .order-total {
