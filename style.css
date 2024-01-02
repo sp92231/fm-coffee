@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    font-family: "Open Sans";
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #efefef;
+    width: 100%;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    background-color: #43281c;
+    width: 100%;
+    min-width: 40rem;
+    color: #fbf2c0;
+    font-size: 16px;
+    padding: 1.25rem;
+}
+
+img {
+    height: 1.625rem;
+}
+
+.grid-container {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+    grid-template-areas:
+        "order-items   .      order-info"
+        "order-items   .   order-payment"
+        "order-items   .   order-payment"
+        "   .          .   order-payment"
+        "order-total  order-total  order-total";
+    margin-bottom: 1rem;
+
+    h3 {
+        color: #8c5e33;
+        margin: 0;
+    }
+}
+
+.box {
+    width: 100%;
+    min-width: 25rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: #ede1d5;
+}
+
+.order-items {
+    grid-area: order-items;
+    display: grid;
+    grid-template-areas:
+        "item-quantity    item-name    item-price"
+        "   .            customization      .    ";
+
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 2fr 1fr;
+
+
+    p {
+        text-align: center;
+        border-bottom: 1px solid #8c5e33;
+    }
+}
+
+.list {
+    list-style: none;
+}
+
+.item-quantity {
+    grid-area: item-quantity;
+}
+
+.item-name {
+    grid-area: item-name;
+}
+
+.item-price {
+    grid-area: item-price;
+}
+
+.customization {
+    grid-area: customization;
+}
+
+.item-details {
+    display: grid;
+
+    h4 {
+        margin: 1rem 0 0 0;
+        text-align: left;
+    }
+}
+
+.order-info {
+    grid-area: order-info;
+
+    input {
+        border: 2px #885a2d solid;
+        border-radius: 1.5rem;
+        background-color: #ede1d5;
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+.label {
+    position: absolute;
+    background-color: #ede1d5;
+    color: #885a2d;
+}
+
+.order-payment {
+    grid-area: order-payment;
+}
+
+.order-total {
+    grid-area: order-total;
+    display: grid;
+    place-items: center;
+}
+
+button {
+    background-color: #deb993;
+    border-radius: 0.5rem;
+    width: 20rem;
+    border: none;
+}
