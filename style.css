@@ -31,22 +31,20 @@ img {
 
 .grid-container {
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
     padding: 2rem;
-    grid-template-columns: auto .125rem auto;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-        "order-items   .      order-info"
-        "order-items   .   order-payment"
-        "order-items   .   order-payment"
-        "   .          .   order-payment"
-        "   .  order-total       .      "
-        "button         button     button";
+        "order-items   order-payment"
+        "order-total   order-total"
+        "button         button    ";
     margin-bottom: 1rem;
 }
 
 .box {
     width: 100%;
     padding: 1rem;
+    margin: 0rem 1rem 1.25rem 0rem;
     border-radius: 0.5rem;
     background-color: #ede1d5;
     box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
@@ -101,7 +99,7 @@ img {
     list-style: none;
 }
 
-.order-info {
+.order-name {
     grid-area: order-info;
 
     input {
@@ -127,6 +125,7 @@ img {
     grid-area: order-total;
     display: grid;
     justify-content: center;
+    text-align: right;
     gap: 1.25rem;
     margin: 1rem;
     grid-template-columns: 25rem auto 25rem;
