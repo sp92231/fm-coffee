@@ -58,45 +58,55 @@ img {
     background-color: #ede1d5;
 }
 
+.title {
+    color: #885a2d;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 16px;
+}
+
 .order-items {
     grid-area: order-items;
+    gap: 1rem;
+    padding: 1rem 1rem 1rem 0rem;
     display: grid;
+    grid-template-columns: 15px auto 40px;
     grid-template-areas:
-        "item-quantity    item-name    item-price"
-        "   .            customization      .    ";
+        "quantity    name    price"
+        "   .       custom     .  ";
 
-    grid-template-rows: auto auto;
-    grid-template-columns: 1fr 2fr 1fr;
+    border-bottom: 2px solid #DDB892;
 
-
-    p {
-        text-align: center;
-        border-bottom: 1px solid #8c5e33;
+    &:last-child {
+        border-bottom: none;
     }
+}
+
+.item-quantity {
+    grid-area: quantity;
+}
+
+.item-name {
+    grid-area: name;
+    font-weight: bold;
+}
+
+.item-price {
+    grid-area: price;
+    font-weight: bold;
+}
+
+.item-customization {
+    grid-area: custom;
+    color: #B08968;
+    font-size: 14px;
 }
 
 .list {
     list-style: none;
 }
 
-.item-quantity {
-    grid-area: item-quantity;
-}
-
-.item-name {
-    grid-area: item-name;
-}
-
-.item-price {
-    grid-area: item-price;
-}
-
-.customization {
-    grid-area: customization;
-}
-
 .item-details {
-    display: grid;
 
     h4 {
         margin: 1rem 0 0 0;
