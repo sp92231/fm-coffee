@@ -32,33 +32,28 @@ img {
 .grid-container {
     display: grid;
     gap: 1rem;
-    margin: 0;
-    width: 100%;
-    justify-content: center;
-    padding: 1rem;
+    padding: 2rem;
+    grid-template-columns: auto .125rem auto;
     grid-template-areas:
         "order-items   .      order-info"
         "order-items   .   order-payment"
         "order-items   .   order-payment"
         "   .          .   order-payment"
-        "order-total  order-total  order-total";
+        "   .  order-total       .      "
+        "button         button     button";
     margin-bottom: 1rem;
-
-    h3 {
-        color: #8c5e33;
-        margin: 0;
-    }
 }
 
 .box {
     width: 100%;
-    min-width: 25rem;
-    padding: 0.75rem;
+    padding: 1rem;
     border-radius: 0.5rem;
     background-color: #ede1d5;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
 }
 
 .title {
+    padding-top: .75rem;
     color: #885a2d;
     text-transform: uppercase;
     font-weight: normal;
@@ -67,8 +62,8 @@ img {
 
 .order-items {
     grid-area: order-items;
-    gap: 1rem;
-    padding: 1rem 1rem 1rem 0rem;
+    gap: .75rem;
+    padding: 1.25rem 0rem 1.25rem 0rem;
     display: grid;
     grid-template-columns: 15px auto 40px;
     grid-template-areas:
@@ -106,14 +101,6 @@ img {
     list-style: none;
 }
 
-.item-details {
-
-    h4 {
-        margin: 1rem 0 0 0;
-        text-align: left;
-    }
-}
-
 .order-info {
     grid-area: order-info;
 
@@ -139,12 +126,66 @@ img {
 .order-total {
     grid-area: order-total;
     display: grid;
-    place-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin: 1rem;
+    grid-template-columns: 25rem auto 25rem;
+    grid-template-areas:
+        "subtotal  .   st-amount"
+        "tax       .  tax-amount"
+        "total     .  total-amount";
+}
+
+.subtotal {
+    grid-area: subtotal;
+    display: flex;
+    justify-content: center;
+}
+
+.st-amount {
+    grid-area: st-amount;
+    display: flex;
+    justify-content: center;
+}
+
+.tax {
+    grid-area: tax;
+    display: flex;
+    justify-content: center;
+}
+
+.tax-amount {
+    grid-area: tax-amount;
+    display: flex;
+    justify-content: center;
+}
+
+.total {
+    grid-area: total;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.total-amount {
+    grid-area: total-amount;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.button {
+    display: flex;
+    grid-area: button;
+    justify-content: center;
+    width: 100%;
 }
 
 button {
     background-color: #deb993;
-    border-radius: 0.5rem;
-    width: 20rem;
+    border-radius: 6.25rem;
+    width: 100%;
+    padding: 0.625rem 1.875rem;
     border: none;
+    font-size: 16px;
 }
