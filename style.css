@@ -1,28 +1,42 @@
 * {
     box-sizing: border-box;
-    font-family: "Open Sans";
-    margin: 0;
     padding: 0;
+    margin: 0;
+    font-family: var(--font-family);
+}
+
+:root {
+    --font-family: "Open Sans";
+
+    --color-gray: #efefef;
+    --color-brown: #43281c;
+    --color-yellow: #fbf2c0;
+    --color-beige: #ede1d5;
+    --color-chocolate: #885a2d;
+    --color-blurywood: #DDB892;
+    --color-taupe: #B08968;
+
+    --box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
 }
 
 .container {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #efefef;
-    width: 100%;
+    background-color: var(--color-gray);
 }
 
 .banner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .5rem;
-    background-color: #43281c;
     width: 100%;
     min-width: 40rem;
-    color: #fbf2c0;
-    font-size: 16px;
     padding: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    font-size: 16px;
+    color: var(--color-yellow);
+    background-color: var(--color-brown);
 }
 
 img {
@@ -30,46 +44,46 @@ img {
 }
 
 .grid-container {
-    display: grid;
-    gap: 2rem;
     padding: 2rem;
+    margin-bottom: 1rem;
+    display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 2rem;
     grid-template-areas:
         "order-items   order-payment"
         "order-total   order-total"
         "button         button    ";
-    margin-bottom: 1rem;
 }
 
 .box {
     width: 100%;
     padding: 1rem;
     margin: 0rem 1rem 1.25rem 0rem;
-    border-radius: 0.5rem;
-    background-color: #ede1d5;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
+    border-radius: 0.25rem;
+    box-shadow: var(--box-shadow);
+    background-color: var(--color-beige);
 }
 
 .title {
     padding-top: .75rem;
-    color: #885a2d;
-    text-transform: uppercase;
-    font-weight: normal;
     font-size: 16px;
+    font-weight: normal;
+    color: var(--color-chocolate);
+    text-transform: uppercase;
 }
 
 .order-items {
     grid-area: order-items;
-    gap: .75rem;
 
     padding: 1.25rem 0rem 1.25rem 0rem;
     display: grid;
-    grid-template-columns: 15px auto 40px;
+    grid-template-columns: 2.5rem auto 2.5rem;
+    gap: .25rem;
     grid-template-areas:
         "quantity    name    price"
         "   .       custom     .  ";
 
-    border-bottom: 2px solid #DDB892;
+    border-bottom: 2px solid var(--color-blurywood);
 
     &:last-child {
         border-bottom: none;
@@ -92,8 +106,8 @@ img {
 
 .item-customization {
     grid-area: custom;
-    color: #B08968;
     font-size: 14px;
+    color: var(--color-taupe);
 }
 
 .list {
@@ -101,68 +115,79 @@ img {
 }
 
 input {
-    border: 2px #885a2d solid;
-    border-radius: 6.25rem;
-    background-color: #ede1d5;
     width: 100%;
     padding: .25rem;
+    margin-bottom: .5rem;
+    border: 2px var(--color-chocolate) solid;
+    border-radius: 6.25rem;
+    display: flex;
     font-size: 18px;
+    background-color: var(--color-beige);
 }
 
 .input-label {
-    background-color: #ede1d5;
-    color: #885a2d;
     position: relative;
-    left: 25px;
     top: 10px;
+    left: 25px;
     font-size: 12px;
+    color: var(--color-chocolate);
+    background-color: var(--color-beige);
+}
+
+.cvv {
+    max-width: 12.5rem;
 }
 
 .order-payment {
     grid-area: order-payment;
-
 }
 
 .order-total {
     grid-area: order-total;
-    display: grid;
-    justify-content: center;
-    text-align: right;
-    gap: 1.25rem;
+
     margin: 1rem;
+    display: grid;
     grid-template-columns: 25rem auto 25rem;
+    justify-content: center;
+    gap: 1.25rem;
     grid-template-areas:
         "subtotal  .   st-amount"
         "tax       .  tax-amount"
         "total     .  total-amount";
+    text-align: right;
 }
 
 .subtotal {
     grid-area: subtotal;
+
     display: flex;
     justify-content: center;
 }
 
 .st-amount {
     grid-area: st-amount;
+
     display: flex;
     justify-content: center;
 }
 
 .tax {
     grid-area: tax;
+
     display: flex;
     justify-content: center;
 }
 
 .tax-amount {
     grid-area: tax-amount;
+
     display: flex;
     justify-content: center;
 }
 
 .total {
     grid-area: total;
+
     display: flex;
     justify-content: center;
     font-weight: bold;
@@ -170,23 +195,25 @@ input {
 
 .total-amount {
     grid-area: total-amount;
+
     display: flex;
     justify-content: center;
     font-weight: bold;
 }
 
 .button {
-    display: flex;
     grid-area: button;
-    justify-content: center;
+
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 button {
-    background-color: #deb993;
-    border-radius: 6.25rem;
     width: 100%;
     padding: 0.625rem 1.875rem;
     border: none;
+    border-radius: 6.25rem;
     font-size: 16px;
+    background-color: var(--color-blurywood);
 }
